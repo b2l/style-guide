@@ -51,8 +51,24 @@ gulp.task('release', function() {
 });
 
 gulp.task('bump', function() {
-  return release(gulp.env.type||'minor');
+  var importance = 'minor';
+  return gulp.src(['./package.json', './bower.json'])
+    .pipe(bump({type: importance}))
+    .pipe(gulp.dest('./'))
 });
+
+gulp.task('tag', ['bump'], function() {
+  var packageJson = require('./package.json');
+  var v = packageJson.version;
+  var message = 'release v'+v;
+
+  gulp.src('./')
+    .pipe(git.commit(message))
+    .pipe(git.tag(v, message))
+    .pipe(git.push('origin', 'master', '--tags'))
+    .pipe(gulp.dest('./'));
+});
+
 
 gulp.task('gh-pages', ['sass', 'hologram', 'rails-assets'], function() {
   return gulp.src('./public')
@@ -77,18 +93,3 @@ gulp.task('rails-assets', ['push'], function() {
 
     return deferred.promise;
 });
-
-gulp.task('push', ['bump'], function() {
-  return git.push('origin', 'master', {args: ' --tags'}, function (err) {
-    if (err) throw err;
-  });
-});
-
-function release(importance) {
-  return gulp.src(['./package.json', './bower.json'])
-    .pipe(bump({type: importance}))
-    .pipe(gulp.dest('./'))
-    .pipe(git.commit('bumps package version'))
-    .pipe(filter('./package.json'))
-    .pipe(tag_version());
-}
