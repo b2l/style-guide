@@ -47,7 +47,7 @@ gulp.task('webserver', function() {
 // Release: increase version number, commit, tag, push to master.
 //  then compile the styleguide and push it to gh-pages
 gulp.task('release', function() {
-  gulp.start('bump', 'push', 'sass', 'hologram', 'gh-pages', 'rails-assets');
+  gulp.start('bump', 'tag', 'sass', 'hologram', 'gh-pages', 'rails-assets');
 });
 
 gulp.task('bump', function() {
@@ -55,6 +55,7 @@ gulp.task('bump', function() {
   return gulp.src(['./package.json', './bower.json'])
     .pipe(bump({type: importance}))
     .pipe(gulp.dest('./'))
+    .pipe(git.commit('bump version number'));
 });
 
 gulp.task('tag', ['bump'], function() {
@@ -62,34 +63,15 @@ gulp.task('tag', ['bump'], function() {
   var v = packageJson.version;
   var message = 'release v'+v;
 
-  gulp.src('./')
-    .pipe(git.commit(message))
-    .pipe(git.tag(v, message))
-    .pipe(git.push('origin', 'master', '--tags'))
-    .pipe(gulp.dest('./'));
+  git.tag(v, message, function(e) {
+    if (e) throw e;
+    git.push('origin', 'master', {args: '--tags'}, function(e) {
+      if (e) throw e;
+    });
+  });
 });
 
-
-gulp.task('gh-pages', ['sass', 'hologram', 'rails-assets'], function() {
+gulp.task('gh-pages', ['sass', 'hologram'], function() {
   return gulp.src('./public')
     .pipe(deploy());
-});
-
-gulp.task('rails-assets', ['push'], function() {
-  var deferred = Q.defer();
-
-  request
-    .post('https://rails-assets.org/components.json')
-    .send( {components: {name: 'mnd-bootstrap', version: null}} )
-    .end(function(res) {
-      if (res.ok) {
-        deferred.resolve();
-        console.log('rails-assets gem updated');
-      } else {
-        deferred.reject();
-        console.error('Error while updating the rails-assets component');
-      }
-    });
-
-    return deferred.promise;
 });
