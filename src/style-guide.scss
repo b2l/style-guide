@@ -54,3 +54,24 @@ ul {
   margin: 0;
   list-style-position: inset;
 }
+
+// Components
+/*doc
+ ---
+ title: Box 
+ name: box
+ category: Base
+ ---
+
+ <div class="box">
+  <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae dictum tortor. Nam quis molestie quam. Nullam vel velit at erat pulvinar ullamcorper ac eget augue. Suspendisse eleifend eu turpis non tincidunt. Nullam commodo ante vel venenatis tincidunt. Nam nisl ipsum, tincidunt id vulputate vel, gravida at tellus. Ut quis lacus sed sapien ullamcorper viverra. Etiam quis purus id dolor efficitur sagittis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin laoreet sapien vitae pretium euismod. Ut ullamcorper egestas sagittis. Etiam scelerisque, nisi at laoreet condimentum, nisi eros consequat orci, blandit placerat odio neque vel neque.</p>
+ </div>
+*/
+.box {
+  padding: 1rem;
+  margin: 1rem;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 1px 3px #999;
+  border-radius: 3px;
+  display: block;
+}
