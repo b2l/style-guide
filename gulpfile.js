@@ -54,12 +54,12 @@ gulp.task('bump', function() {
   return release(gulp.env.type||'minor');
 });
 
-gulp.task('gh-pages', function() {
+gulp.task('gh-pages', ['sass', 'hologram', 'rails-assets'], function() {
   return gulp.src('./public')
     .pipe(deploy());
 });
 
-gulp.task('rails-assets', function() {
+gulp.task('rails-assets', ['push'], function() {
   var deferred = Q.defer();
 
   request
@@ -78,7 +78,7 @@ gulp.task('rails-assets', function() {
     return deferred.promise;
 });
 
-gulp.task('push', function() {
+gulp.task('push', ['bump'], function() {
   return git.push('origin', 'master', {args: ' --tags'}, function (err) {
     if (err) throw err;
   });
