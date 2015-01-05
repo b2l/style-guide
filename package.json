@@ -1,20 +1,25 @@
 {
   "name": "style-guide",
   "version": "0.0.1",
-  "description": "My own styleguide",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "push": "./release.rb"
-  },
+  "description": "",
+  "main": "gulpfile.js",
+  "author": "Nicolas Medda",
   "repository": {
     "type": "git",
-    "url": "git://github.com/b2l/style-guide.git"
+    "url": "https://github.com/b2l/style-guide.git"
   },
-  "author": "b2l <b2l.powa@gmail.com>",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/b2l/style-guide/issues"
-  },
-  "homepage": "https://github.com/b2l/style-guide"
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-bump": "^0.1.11",
+    "gulp-filter": "^2.0.0",
+    "gulp-gh-pages": "^0.4.0",
+    "gulp-git": "^0.5.5",
+    "gulp-hologram": "^1.2.0",
+    "gulp-notify": "^2.1.0",
+    "gulp-ruby-sass": "^0.7.1",
+    "gulp-tag-version": "^1.2.1",
+    "gulp-webserver": "^0.9.0",
+    "q": "^1.1.2",
+    "superagent": "^0.21.0"
+  }
 }

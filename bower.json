@@ -1,0 +1,21 @@
+{
+  "name": "nme-style-guide",
+  "version": "0.0.1",
+  "authors": [
+    "Nicolas Medda <b2l.powa@gmail.com>"
+  ],
+  "description": "My own styleguide",
+  "main": [
+    "src/style-guide.scss"
+  ],
+  "keywords": [
+    ""
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
