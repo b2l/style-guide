@@ -1,0 +1,55 @@
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: white;
+  height: 100%;
+  width: 100%;
+}
+
+/*doc
+ ---
+ title: Typo 
+ name: typo
+ category: Base
+ ---
+
+ <h1>h1- This is a top level title</h1> 
+ <h2>h2- This is a top level title</h2> 
+ <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae dictum tortor. Nam quis molestie quam. Nullam vel velit at erat pulvinar ullamcorper ac eget augue. Suspendisse eleifend eu turpis non tincidunt. Nullam commodo ante vel venenatis tincidunt. Nam nisl ipsum, tincidunt id vulputate vel, gravida at tellus. Ut quis lacus sed sapien ullamcorper viverra. Etiam quis purus id dolor efficitur sagittis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin laoreet sapien vitae pretium euismod. Ut ullamcorper egestas sagittis. Etiam scelerisque, nisi at laoreet condimentum, nisi eros consequat orci, blandit placerat odio neque vel neque.</p> 
+ <ul>
+  <li>And this is a list</li>
+  <li>With multiple items</li>
+  <li>With multiple items</li>
+  <li>With multiple items</li>
+</ul>
+*/
+body {
+  font-family: verdana;
+  line-height: 1.2rem;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 2.5rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 2.2rem;
+}
+
+p {
+  font-size: 1rem;
+  text-indent: 2rem;
+}
+
+ul {
+  padding: 2rem;
+  margin: 0;
+  list-style-position: inset;
+}
