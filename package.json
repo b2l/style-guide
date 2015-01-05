@@ -1,6 +1,6 @@
 {
   "name": "style-guide",
-  "version": "0.22.0",
+  "version": "0.23.0",
   "description": "",
   "main": "gulpfile.js",
   "author": "Nicolas Medda",
