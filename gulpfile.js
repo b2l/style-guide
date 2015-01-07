@@ -47,7 +47,7 @@ gulp.task('webserver', function() {
 // Release: increase version number, commit, tag, push to master.
 //  then compile the styleguide and push it to gh-pages
 gulp.task('release', function() {
-  gulp.start('bump', 'tag', 'sass', 'hologram', 'gh-pages');
+  gulp.start('gh-pages');
 });
 
 gulp.task('bump', function() {
@@ -71,7 +71,7 @@ gulp.task('tag', ['bump'], function() {
   });
 });
 
-gulp.task('gh-pages', ['sass', 'hologram'], function() {
+gulp.task('gh-pages', ['tag', 'sass', 'hologram'], function() {
   return gulp.src('./public/')
     .pipe(deploy());
 });
