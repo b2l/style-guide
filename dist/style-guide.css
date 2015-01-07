@@ -1,0 +1,111 @@
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: white;
+  height: 100%;
+  width: 100%;
+}
+
+/*doc
+ ---
+ title: Typo
+ name: typo
+ category: Base
+ ---
+
+ <h1>h1- This is a top level title</h1>
+ <h2>h2- This is a top level title</h2>
+ <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae dictum tortor. Nam quis molestie quam. Nullam vel velit at erat pulvinar ullamcorper ac eget augue. Suspendisse eleifend eu turpis non tincidunt. Nullam commodo ante vel venenatis tincidunt. Nam nisl ipsum, tincidunt id vulputate vel, gravida at tellus. Ut quis lacus sed sapien ullamcorper viverra. Etiam quis purus id dolor efficitur sagittis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin laoreet sapien vitae pretium euismod. Ut ullamcorper egestas sagittis. Etiam scelerisque, nisi at laoreet condimentum, nisi eros consequat orci, blandit placerat odio neque vel neque.</p>
+ <ul>
+  <li>And this is a list</li>
+  <li>With multiple items</li>
+  <li>With multiple items</li>
+  <li>With multiple items</li>
+</ul>
+*/
+body {
+  font-family: verdana;
+  line-height: 1.2rem;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 2.5rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 2.2rem;
+}
+
+p {
+  font-size: 1rem;
+  text-indent: 2rem;
+}
+
+ul {
+  padding: 2rem;
+  margin: 0;
+  list-style-position: inset;
+}
+
+/*doc
+ ---
+ title: Box
+ name: box
+ category: Base
+ ---
+
+ <div class="box">
+  <p class="box-content"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae dictum tortor. Nam quis molestie quam. Nullam vel velit at erat pulvinar ullamcorper ac eget augue. Suspendisse eleifend eu turpis non tincidunt. Nullam commodo ante vel venenatis tincidunt. Nam nisl ipsum, tincidunt id vulputate vel, gravida at tellus. Ut quis lacus sed sapien ullamcorper viverra. Etiam quis purus id dolor efficitur sagittis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin laoreet sapien vitae pretium euismod. Ut ullamcorper egestas sagittis. Etiam scelerisque, nisi at laoreet condimentum, nisi eros consequat orci, blandit placerat odio neque vel neque.</p>
+ </div>
+
+ <div class="box">
+  <div class="box-header">
+    This is my Box
+  </div>
+  <p class="box-content"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae dictum tortor. Nam quis molestie quam. Nullam vel velit at erat pulvinar ullamcorper ac eget augue. Suspendisse eleifend eu turpis non tincidunt. Nullam commodo ante vel venenatis tincidunt. Nam nisl ipsum, tincidunt id vulputate vel, gravida at tellus. Ut quis lacus sed sapien ullamcorper viverra. Etiam quis purus id dolor efficitur sagittis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin laoreet sapien vitae pretium euismod. Ut ullamcorper egestas sagittis. Etiam scelerisque, nisi at laoreet condimentum, nisi eros consequat orci, blandit placerat odio neque vel neque.</p>
+ </div>
+
+ <div class="box">
+  <div class="box-header">
+    This is my Box
+  </div>
+  <p class="box-content"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae dictum tortor. Nam quis molestie quam. Nullam vel velit at erat pulvinar ullamcorper ac eget augue. Suspendisse eleifend eu turpis non tincidunt. Nullam commodo ante vel venenatis tincidunt. Nam nisl ipsum, tincidunt id vulputate vel, gravida at tellus. Ut quis lacus sed sapien ullamcorper viverra. Etiam quis purus id dolor efficitur sagittis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin laoreet sapien vitae pretium euismod. Ut ullamcorper egestas sagittis. Etiam scelerisque, nisi at laoreet condimentum, nisi eros consequat orci, blandit placerat odio neque vel neque.</p>
+  <div class="box-footer">
+    Are you sure you want to do this? <button class="btn">No</button><button class="btn primary">Yes</button>
+  </div>
+ </div>
+*/
+.box {
+  margin: 1rem;
+  box-shadow: 0 0 1px 5px #555555;
+  border-radius: 3px;
+  display: block;
+}
+
+.box-content {
+  padding: 1rem;
+}
+
+.box-header {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  padding: 0.5rem 1rem;
+}
+
+.box-header ~ .box-content {
+  padding-top: 0;
+}
+
+.box-footer {
+  padding: 1rem;
+  background: #ddd;
+  font-size: 1.1rem;
+}
